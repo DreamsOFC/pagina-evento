@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traga seu grupo pro Guará — Condição especial de julho</title>
+<meta name="description" content="Escola, empresa, igreja ou galera de amigos: monte uma condição especial pro seu grupo no Guará Acqua Park. Só restam 2 vagas em julho!">
+
+<!-- Compartilhamento no WhatsApp -->
+<meta property="og:title" content="Traga seu grupo pro Guará em julho ☀️🌊">
+<meta property="og:description" content="Condição especial pra grupos. Só restam 2 vagas na agenda de julho. Deixe seu contato e a gente te retorna rapidinho!">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --pool-deep:#075985;
+    --pool:#0891B2;
+    --aqua:#22D3EE;
+    --aqua-soft:#A5F0FC;
+    --foam:#F2FCFF;
+    --sun:#FF7A2F;
+    --sun-dark:#F2650F;
+    --sunny:#FFD447;
+    --ink:#063452;
+    --ink-soft:#3B6883;
+    --white:#ffffff;
+    --err:#E23B47;
+    --radius:22px;
+    --shadow:0 20px 45px -18px rgba(6,52,82,.45);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"Nunito Sans",system-ui,sans-serif;
+    color:var(--ink);
+    background:linear-gradient(180deg,#7FE6F7 0%,#2FC0DE 34%,var(--pool) 70%,var(--pool-deep) 100%);
+    background-attachment:fixed;
+    min-height:100dvh;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* Sol */
+  .sun{
+    position:fixed;top:-46px;right:-46px;width:150px;height:150px;border-radius:50%;
+    background:radial-gradient(circle at 40% 40%,#FFE27A,var(--sunny) 55%,#FFB627 100%);
+    box-shadow:0 0 60px 18px rgba(255,199,71,.55);
+    z-index:0;pointer-events:none;
+  }
+
+  /* Bolhas ambiente */
+  .bubbles{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .bubbles span{
+    position:absolute;bottom:-40px;border-radius:50%;
+    background:rgba(255,255,255,.28);border:1px solid rgba(255,255,255,.35);
+    animation:rise linear infinite;
+  }
+  @keyframes rise{
+    from{transform:translateY(0) scale(1);opacity:0}
+    12%{opacity:.9}
+    to{transform:translateY(-115dvh) scale(1.15);opacity:0}
+  }
+
+  .wrap{position:relative;z-index:2;max-width:520px;margin:0 auto;padding:40px 20px 60px}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.9);color:var(--pool-deep);
+    font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    padding:8px 14px;border-radius:999px;box-shadow:var(--shadow);
+  }
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--sun)}
+
+  h1{
+    font-family:"Fredoka",sans-serif;font-weight:700;
+    color:var(--white);
+    font-size:clamp(2.1rem,8.5vw,3rem);line-height:1.02;
+    margin:18px 0 0;letter-spacing:-.01em;
+    text-shadow:0 4px 18px rgba(6,52,82,.35);
+  }
+  h1 .hl{color:var(--sunny)}
+
+  .lead{
+    color:var(--foam);font-size:1.06rem;line-height:1.5;margin:14px 0 0;
+    font-weight:600;max-width:42ch;
+  }
+
+  .urgency{
+    display:flex;align-items:center;gap:12px;margin:22px 0 24px;
+    background:linear-gradient(100deg,var(--sun),var(--sun-dark));
+    color:var(--white);padding:13px 16px;border-radius:16px;
+    box-shadow:0 14px 30px -12px rgba(242,101,15,.7);
+    font-weight:700;
+  }
+  .urgency .tag{
+    font-family:"Fredoka",sans-serif;font-size:1.5rem;line-height:1;
+    background:rgba(255,255,255,.22);border-radius:10px;padding:8px 11px;
+  }
+  .urgency small{display:block;font-weight:600;font-size:.82rem;opacity:.92}
+
+  /* Card do formulário */
+  .card{
+    background:var(--white);border-radius:var(--radius);
+    padding:24px 22px 26px;box-shadow:var(--shadow);
+    position:relative;overflow:hidden;
+  }
+  .card::before{
+    content:"";position:absolute;left:0;right:0;top:0;height:6px;
+    background:linear-gradient(90deg,var(--aqua),var(--pool),var(--sunny),var(--sun));
+  }
+  .card h2{
+    font-family:"Fredoka",sans-serif;font-weight:600;color:var(--ink);
+    font-size:1.32rem;margin:4px 0 2px;
+  }
+  .card .sub{color:var(--ink-soft);font-size:.94rem;margin:0 0 18px}
+
+  .field{margin-bottom:15px}
+  label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px;color:var(--ink)}
+  .req{color:var(--sun)}
+
+  input{
+    width:100%;font-family:inherit;font-size:1rem;color:var(--ink);
+    padding:14px 15px;border:2px solid #DCEDF4;border-radius:13px;
+    background:var(--foam);transition:border-color .15s,box-shadow .15s;
+  }
+  input::placeholder{color:#9FBACB}
+  input:focus{
+    outline:none;border-color:var(--aqua);background:#fff;
+    box-shadow:0 0 0 4px rgba(34,211,238,.2);
+  }
+  input.invalid{border-color:var(--err);background:#FFF5F5}
+  .hint{font-size:.78rem;color:var(--ink-soft);margin-top:5px}
+  .error-msg{color:var(--err);font-size:.8rem;font-weight:700;margin-top:5px;display:none}
+  .field.show-error .error-msg{display:block}
+
+  .btn{
+    width:100%;border:none;cursor:pointer;font-family:"Fredoka",sans-serif;
+    font-weight:600;font-size:1.18rem;color:var(--white);
+    background:linear-gradient(100deg,var(--sun),var(--sun-dark));
+    padding:17px;border-radius:15px;margin-top:8px;
+    box-shadow:0 14px 28px -10px rgba(242,101,15,.75);
+    transition:transform .12s,box-shadow .12s,filter .12s;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+  }
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+  .btn:active{transform:translateY(0)}
+  .btn:disabled{filter:grayscale(.3) brightness(.95);cursor:progress;opacity:.85}
+
+  .reassure{text-align:center;color:var(--ink-soft);font-size:.82rem;margin:14px 0 0}
+  .reassure b{color:var(--pool)}
+
+  /* Estado de sucesso */
+  .success{display:none;text-align:center;padding:14px 6px 6px;animation:pop .4s ease}
+  .success.show{display:block}
+  @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+  .success .splash{
+    width:88px;height:88px;margin:0 auto 14px;border-radius:50%;
+    background:linear-gradient(135deg,var(--aqua),var(--pool));
+    display:flex;align-items:center;justify-content:center;font-size:2.6rem;
+    box-shadow:0 12px 26px -10px rgba(8,145,178,.7);
+  }
+  .success h2{font-family:"Fredoka",sans-serif;color:var(--ink);font-size:1.5rem;margin:0 0 8px}
+  .success p{color:var(--ink-soft);font-size:1.02rem;line-height:1.5;margin:0 auto;max-width:34ch}
+  .success .whats{
+    display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+    color:var(--pool);font-weight:700;font-size:.9rem;
+  }
+
+  footer{
+    text-align:center;color:rgba(255,255,255,.85);font-size:.8rem;
+    margin-top:26px;line-height:1.6;
+  }
+  footer b{color:var(--white)}
+
+  .form-error-top{
+    display:none;background:#FFF0F1;border:1.5px solid #FBD0D3;color:var(--err);
+    font-weight:700;font-size:.86rem;border-radius:12px;padding:11px 13px;margin-bottom:14px;
+  }
+  .form-error-top.show{display:block}
+
+  @media (prefers-reduced-motion:reduce){
+    .bubbles{display:none}
+    *{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<div class="sun" aria-hidden="true"></div>
+<div class="bubbles" aria-hidden="true"></div>
+
+<main class="wrap">
+  <span class="eyebrow"><span class="dot"></span> Julho · Condição especial pra grupos</span>
+
+  <h1>Traga seu grupo<br>pro <span class="hl">Guará</span> 🌊</h1>
+  <p class="lead">Escola, empresa, igreja ou aquela galera de amigos — a gente monta uma condição especial pro seu grupo aproveitar o dia inteiro.</p>
+
+  <div class="urgency">
+    <span class="tag">02</span>
+    <span>Só restam <u>2 vagas</u> na agenda de julho!<small>Garanta a data do seu grupo antes que feche.</small></span>
+  </div>
+
+  <section class="card">
+    <!-- FORMULÁRIO -->
+    <div id="formView">
+      <h2>Quero uma condição pro meu grupo</h2>
+      <p class="sub">Preencha rapidinho e a gente confere a disponibilidade pra você.</p>
+
+      <div class="form-error-top" id="formErrorTop">Confira os campos destacados em vermelho 👇</div>
+
+      <div class="field" id="f-nome">
+        <label for="nome">Seu nome <span class="req">*</span></label>
+        <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?">
+        <div class="error-msg">Conta pra gente seu nome 🙂</div>
+      </div>
+
+      <div class="field" id="f-telefone">
+        <label for="telefone">WhatsApp / telefone <span class="req">*</span></label>
+        <input id="telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 00000-0000" maxlength="16">
+        <div class="error-msg">Digite um número válido com DDD.</div>
+      </div>
+
+      <div class="field" id="f-pessoas">
+        <label for="pessoas">Quantas pessoas você quer trazer? <span class="req">*</span></label>
+        <input id="pessoas" name="pessoas" type="number" inputmode="numeric" min="1" max="2000" placeholder="Ex: 30">
+        <div class="error-msg">Informe quantas pessoas (mínimo 1).</div>
+      </div>
+
+      <div class="field" id="f-data">
+        <label for="data">Que data você pretende vir? <span class="req">*</span></label>
+        <input id="data" name="data" type="date">
+        <div class="hint">Pode ser uma data aproximada — a gente ajusta depois com você.</div>
+        <div class="error-msg">Escolha uma data pra sua visita.</div>
+      </div>
+
+      <button class="btn" id="submitBtn" type="button">Saber se tem vaga ☀️</button>
+      <p class="reassure">Sem compromisso. A gente te retorna <b>rapidinho</b> pelo WhatsApp.</p>
+    </div>
+
+    <!-- SUCESSO -->
+    <div class="success" id="successView">
+      <div class="splash">🎉</div>
+      <h2>Deu certo, <span id="successName">tudo certo</span>!</h2>
+      <p>Recebemos seu contato! <b>Vamos falar com você daqui a pouco</b> pra confirmar a vaga do seu grupo. Fica de olho no WhatsApp 👀📱</p>
+      <div class="whats">🌊 Guará Acqua Park · até já!</div>
+    </div>
+  </section>
+
+  <footer>
+    <b>Guará Acqua Park</b><br>
+    Diversão garantida pro seu grupo 🌴☀️
+  </footer>
+</main>
+
+<script>
+  /* ============================================================
+     1) COLE AQUI A URL DO SEU GOOGLE APPS SCRIPT (passo a passo no chat)
+     Enquanto estiver com o texto abaixo, a página funciona em modo
+     de teste (mostra a mensagem de sucesso, mas NÃO salva na planilha).
+     ============================================================ */
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwY_BC-N-ghLi2NBLFShnkfzXI1Sj8AkBWq_BtLR23MBgWXBfSckCw8BJ3N0Sr0eduVtQ/exec";
+
+  /* ---------- Bolhas decorativas ---------- */
+  (function(){
+    const c = document.querySelector('.bubbles');
+    for(let i=0;i<14;i++){
+      const b=document.createElement('span');
+      const s=6+Math.random()*26;
+      b.style.width=s+'px'; b.style.height=s+'px';
+      b.style.left=Math.random()*100+'%';
+      b.style.animationDuration=(9+Math.random()*10)+'s';
+      b.style.animationDelay=(-Math.random()*12)+'s';
+      c.appendChild(b);
+    }
+  })();
+
+  /* ---------- Data mínima = hoje ---------- */
+  (function(){
+    const d=new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset());
+    document.getElementById('data').min = d.toISOString().split('T')[0];
+  })();
+
+  /* ---------- Máscara de telefone (BR) ---------- */
+  const tel = document.getElementById('telefone');
+  tel.addEventListener('input', () => {
+    let v = tel.value.replace(/\D/g,'').slice(0,11);
+    if(v.length>=1) v = '(' + v;
+    if(v.length>=3) v = v.slice(0,3) + ') ' + v.slice(3);
+    if(v.length>=10){
+      const cut = v.length-4;
+      v = v.slice(0,cut) + '-' + v.slice(cut);
+    }
+    tel.value = v;
+  });
+
+  /* ---------- Validação ---------- */
+  function setError(id, on){
+    const f=document.getElementById(id);
+    f.classList.toggle('show-error', on);
+    const input=f.querySelector('input');
+    if(input) input.classList.toggle('invalid', on);
+  }
+
+  function validate(){
+    let ok=true;
+    const nome = document.getElementById('nome').value.trim();
+    const telDigits = tel.value.replace(/\D/g,'');
+    const pessoas = document.getElementById('pessoas').value;
+    const data = document.getElementById('data').value;
+
+    setError('f-nome', nome.length<2); if(nome.length<2) ok=false;
+    setError('f-telefone', telDigits.length<10); if(telDigits.length<10) ok=false;
+    setError('f-pessoas', !pessoas || +pessoas<1); if(!pessoas || +pessoas<1) ok=false;
+    setError('f-data', !data); if(!data) ok=false;
+
+    document.getElementById('formErrorTop').classList.toggle('show', !ok);
+    return ok;
+  }
+
+  ['nome','telefone','pessoas','data'].forEach(id=>{
+    document.getElementById(id).addEventListener('input', ()=>{
+      const map={nome:'f-nome',telefone:'f-telefone',pessoas:'f-pessoas',data:'f-data'};
+      setError(map[id], false);
+    });
+  });
+
+  /* ---------- Envio ---------- */
+  const btn = document.getElementById('submitBtn');
+
+  btn.addEventListener('click', async () => {
+    if(!validate()){
+      const firstErr = document.querySelector('.field.show-error');
+      if(firstErr) firstErr.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const dados = new FormData();
+    dados.append('nome', document.getElementById('nome').value.trim());
+    dados.append('telefone', tel.value.trim());
+    dados.append('pessoas', document.getElementById('pessoas').value);
+    dados.append('data', document.getElementById('data').value);
+    dados.append('origem', 'Campanha WhatsApp - Grupos Julho');
+    dados.append('enviado_em', new Date().toLocaleString('pt-BR'));
+
+    try{
+      if(SCRIPT_URL && !SCRIPT_URL.startsWith('COLE_AQUI')){
+        await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', body:dados });
+      } else {
+        // modo teste (URL ainda não configurada)
+        await new Promise(r=>setTimeout(r,700));
+        console.warn('SCRIPT_URL não configurada: rodando em modo de teste, nada foi salvo.');
+      }
+      showSuccess();
+    }catch(err){
+      // com no-cors quase nunca cai aqui; mesmo assim confirmamos pro usuário
+      console.error(err);
+      showSuccess();
+    }
+  });
+
+  function showSuccess(){
+    const nome = document.getElementById('nome').value.trim().split(' ')[0];
+    document.getElementById('successName').textContent = nome || 'tudo certo';
+    document.getElementById('formView').style.display='none';
+    const s=document.getElementById('successView');
+    s.classList.add('show');
+    s.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+</script>
+</body>
+</html>
